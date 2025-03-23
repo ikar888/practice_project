@@ -4,11 +4,16 @@
 '''
 # Import Flask, render_template, request from the flask pramework package : TODO
 # Import the sentiment_analyzer function from the package created: TODO
+from sentiment_analysis import sentiment_analyzer
+from flask import Flask, request, render_template, url_for, redirect
 
 #Initiate the flask app : TODO
+app = Flask(__name__)
 
 @app.route("/sentimentAnalyzer")
 def sent_analyzer():
+    sent_analyzer()
+    return ()
     ''' This code receives the text from the HTML interface and 
         runs sentiment analysis over it using sentiment_analysis()
         function. The output returned shows the label and its confidence 
@@ -24,5 +29,6 @@ def render_index_page():
     #TODO
 
 if __name__ == "__main__":
+    app.run(debug=True)
     ''' This functions executes the flask app and deploys it on localhost:5000
     '''#TODO
